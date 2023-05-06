@@ -28,7 +28,7 @@ Defining the relationships between the models using Django's ForeignKey
 Creating views for the home page, product list page, product detail page, shopping cart page, checkout page, and order confirmation page.
 Defining the logic for each view using Django's TemplateView, ListView, DetailView, and FormView classes.
 ## Templates
-Creating templates for each view using HTML, CSS.
+Creating templates for each view using HTML, CSS,JAVASCRIPT.
 Using Django's template language to render dynamic content in the templates.
 
 ## Forms
