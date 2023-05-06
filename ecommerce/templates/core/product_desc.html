@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Description</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/product_desc.css' %}">
+    <style>
+      /* Reset default styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Style for the container */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Style for the card */
+      .card {
+        border: 1px solid #cccccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        max-width: 800px;
+        width: 100%;
+      }
+
+      /* Style for the preview section */
+      .preview {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Style for the preview image */
+      .preview-pic img {
+        max-width: 100%;
+      }
+
+      /* Style for the details section */
+      .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 20px;
+      }
+
+      /* Style for the product title */
+      .product-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      /* Style for the product description */
+      .product-description {
+        font-size: 16px;
+        margin-bottom: 20px;
+        
+      }
+
+      /* Style for the price section */
+      .price {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Style for the add to cart button */
+      .add_to_cart {
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+
+      .add_to_cart:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+    <body>
+
+        <div class="container">
+            <div class="card">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                        <div class="preview col-md-6">
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active" id="pic-1"><img src="{{product.img.url}}"></div>
+                                
+                            </div>
+                            <div class="details col-md-6">
+                                <h3 class="product-title">{{product.name}}</h3>
+                                <p class="product-description">{{product.desc}}</p>
+                                <h4 class="price">current price:<span>MAD. {{product.price}}</span></h4>
+                                <div class="action">
+                                    <a href="{% url 'add_to_cart' product.pk  %}" class="add_to_cart btn btn-default">Add to Cart </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    </body>
